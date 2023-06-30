@@ -1,0 +1,82 @@
+* {
+  font-family: Verdana, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+header {
+  display: flex;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  z-index: 3;
+}
+
+button.primary {
+  background-color: rgb(2, 86, 254);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+}
+button.secondary {
+  border: 1px solid rgb(2, 86, 254);
+  background-color: rgb(255, 255, 255);
+  color: rgb(2, 86, 254);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: 
+    url('../images/flowing-purple-mountain-spiral-bright-imagination-generated-by-ai.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-info-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 60px;
+  width: 450px;
+  text-align: center;
+}
+
+.main-info-container h1 {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-info-container .disclaimer {
+  font-size: 12px;
+  color: rgb(126, 126, 126);
+}
+
+.main-info-container .button-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-info-container .button-container button {
+  margin: 5px;
+  width: 350px;
+}
