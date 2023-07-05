@@ -30,16 +30,16 @@ const Search = () => {
   return (
     <div className="search-container">
       <div className="results-container">
-      <h2>Choose Class:</h2>
-      <ul>
-        {serviceList.map((service) => 
-        <li>
-          <Link className="card-link" href='/'>
-            <Card service={service}/>
-          </Link>
-        </li>
-        )}
-      </ul>
+        <h2>Choose Class:</h2>
+        <ul>
+          {serviceList.map((service) =>
+            <li key={service._id}>
+              <Link className="card-link" href={`/services/${encodeURIComponent(service.mainSlug.name)}`}>
+                <Card service={service} />
+              </Link>
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   )

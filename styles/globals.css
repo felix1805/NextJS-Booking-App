@@ -2,7 +2,11 @@
   font-family: Verdana, 'Trebuchet MS', sans-serif;
 }
 
-html, body {
+li {
+list-style-type: none;
+}
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -29,6 +33,7 @@ button.primary {
   border-radius: 30px;
   font-size: 15px;
 }
+
 button.secondary {
   border: 1px solid rgb(2, 86, 254);
   background-color: rgb(255, 255, 255);
@@ -43,7 +48,7 @@ button.secondary {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: 
+  background-image:
     url('../images/flowing-purple-mountain-spiral-bright-imagination-generated-by-ai.jpg');
   background-size: cover;
   background-position: center;
@@ -79,4 +84,50 @@ button.secondary {
 .main-info-container .button-container button {
   margin: 5px;
   width: 350px;
+}
+
+/* card styling */
+
+.card {
+  display: flex;
+  border-bottom: solid 1px rgb(214, 214, 214);
+  padding: 10px;
+}
+
+.card p {
+  font-size: 13px;
+}
+
+.card .img-container {
+  height: 100px;
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card .img-container img {
+  height: 130%;
+}
+
+.card-link {
+  text-decoration: none;
+  color: rgb(24, 24, 24);
+}
+
+.card .text-container,
+.card .decription-container {
+  width: 200px;
+  margin: 10px;
+}
+
+.card .info-container {
+  display: flex;
+  width: 400px;
+  border-right: solid 1px rgb(214, 214, 214);
+  margin: 10px;
+}
+
+.card h3, .card p {
+  margin: 0;
 }
