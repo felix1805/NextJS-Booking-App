@@ -2,6 +2,7 @@ import Link from "next/link";
 import '../styles/globals.css';
 import { useState, createContext } from "react";
 import SearchBar from "@/components/SearchBar";
+import LoginBar from "@/components/LoginBar";
 
 export const searchContext = createContext(null)
 
@@ -15,6 +16,7 @@ const App = ({ Component, pageProps }) => {
             <h3>ClassPass</h3>
           </Link>
           <SearchBar/>
+          <LoginBar/>
         </header>
         <Component {...pageProps} />
       </searchContext.Provider>

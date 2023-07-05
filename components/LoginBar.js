@@ -1,6 +1,7 @@
 const LoginBar = () => {
   return (
-    <>LoginBar
+    <>
+      LoginBar
     </>
   )
 

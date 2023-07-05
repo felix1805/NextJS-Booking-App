@@ -3,7 +3,8 @@ import Link from "next/link";
 import { createClient, OAuthStrategy } from "@wix/api-client";
 import { services } from "@wix/bookings";
 import Cookies from "js-cookie";
-import Card from "@/components/Card";
+import Card from "../components/Card";
+import { searchContext } from "./_app";
 
 const myWixClient = createClient({
   modules: { services },
@@ -15,15 +16,21 @@ const myWixClient = createClient({
 
 const Search = () => {
   const [serviceList, setServiceList] = useState([])
+  const [searchTerm, setSearchTerm] = useContext(searchContext)
 
   const fetchServices = async () => {
-    const serviceList = await myWixClient.services.queryServices().find()
+    let serviceList
+    if (searchTerm) {
+      serviceList = await myWixClient.services.queryServices().startsWith('name', decodeURIComponent(searchTerm)).find()
+    } else {
+      serviceList = await myWixClient.services.queryServices().find()
+    }
     setServiceList(serviceList.items)
   }
 
   useEffect(() => {
     fetchServices()
-  }, [])
+  }, [searchTerm])
 
   console.log(serviceList)
 

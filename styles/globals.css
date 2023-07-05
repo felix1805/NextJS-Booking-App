@@ -131,3 +131,36 @@ button.secondary {
 .card h3, .card p {
   margin: 0;
 }
+
+/* Search Bar */
+
+.search-input {
+  position: absolute;
+  width: 100%;
+  padding: 10px 30px;
+  border-radius: 20px;
+  outline: none;
+  border: solid 1px rgb(219, 219, 219);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06);
+
+}
+
+.search-bar-container {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  margin-right: 400px;
+}
+
+.search-bar-container svg {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 430px;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}

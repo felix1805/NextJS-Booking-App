@@ -13,7 +13,7 @@ const SearchBar = () => {
           placeholder="Search classes here..."
           onChange={e => setSearchTerm(e.target.value)}
           value={searchTerm}
-        />
+          />
       </div>
     </div>
   )
