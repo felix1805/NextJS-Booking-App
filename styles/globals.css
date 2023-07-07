@@ -3,8 +3,9 @@
 }
 
 li {
-list-style-type: none;
+  list-style-type: none;
 }
+
 html,
 body {
   margin: 0;
@@ -128,7 +129,8 @@ button.secondary {
   margin: 10px;
 }
 
-.card h3, .card p {
+.card h3,
+.card p {
   margin: 0;
 }
 
@@ -163,4 +165,32 @@ button.secondary {
   display: flex;
   align-items: center;
   margin: 0 10px;
+}
+
+/* Service Page */
+
+.service-container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-container .info-container {
+  width: 700px;
+  padding: 5px;
+}
+
+.service-container .address-container {
+  width: 300px;
+  padding: 5px;
+}
+
+.service-container .schedule-card-button {
+display: flex;
+justify-content: space-between;
+width: 100%;
+border: none;
+cursor: pointer;
+border-bottom: solid 1px rgb(255, 255, 255);
+border-radius: 3px;
 }
