@@ -4,6 +4,7 @@ import { createClient, OAuthStrategy } from "@wix/api-client";
 import { availabilityCalendar, services } from "@wix/bookings";
 import { redirects } from "@wix/redirects";
 import Cookies from "js-cookie";
+import ScheduleCard from "@/components/ScheduleCard";
 
 const myWixClient = createClient({
   modules: { services, availabilityCalendar, redirects },
@@ -49,14 +50,34 @@ const ServicePage = () => {
   }, [service])
 
   console.log('availabilityEntries', availabilityEntries)
+  console.log('service', service)
 
   return (
     <>
-    {service && 
-    <article className="service-container">
-      <div className=""></div>
-    </article>
-    }
+      {service &&
+        <article className="service-container">
+          <div className="info-container">
+            {/* {Image Placeholder} */}
+            <h2>{service.name}</h2>
+            <p>{service.tagLine}</p>
+            <p>{service.description}</p>
+            <hr />
+            <h3>Schedule</h3>
+            {availabilityEntries.map((availabilityEntry) =>
+            <ScheduleCard
+              key={Object.keys(availabilityEntry)}
+              availabilityEntry={availabilityEntry}
+            />
+          )}
+          </div>
+          <div className="address-container">
+           {/* {MiniMap} */}
+           <p>➡️{service.locations[0].business.address.formatted}</p>
+           <p>➡️{service.locations[0].business.address.city}</p>
+           <p>➡️{service.locations[0].business.address.country}</p>
+          </div>
+        </article>
+      }
     </>
   )
 }
