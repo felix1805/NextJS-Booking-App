@@ -194,3 +194,29 @@ cursor: pointer;
 border-bottom: solid 1px rgb(255, 255, 255);
 border-radius: 3px;
 }
+
+/* Nav */
+
+nav {
+  display: flex;
+}
+
+nav p {
+  font-size: 14px;
+}
+
+nav button.login {
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+}
+
+nav button.login:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}

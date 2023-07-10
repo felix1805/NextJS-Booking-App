@@ -1,8 +1,8 @@
 import Link from "next/link";
 import '../styles/globals.css';
 import { useState, createContext } from "react";
-import SearchBar from "@/components/SearchBar";
-import LoginBar from "@/components/LoginBar";
+import SearchBar from "../components/SearchBar";
+import LoginBar from "../components/LoginBar";
 
 export const searchContext = createContext(null)
 

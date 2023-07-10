@@ -11,6 +11,7 @@
   "dependencies": {
     "@wix/api-client": "^1.2.0",
     "@wix/bookings": "^1.0.193",
+    "@wix/members": "^1.0.15",
     "@wix/redirects": "^1.0.20",
     "babel": "^6.23.0",
     "eslint": "8.43.0",
