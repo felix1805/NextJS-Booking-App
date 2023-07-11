@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }) => {
       <searchContext.Provider value={[searchTerm, setSearchTerm]}>
         <header>
           <Link href='/'>
-            <h3>ClassPass</h3>
+            <h3 className="home-page">Home</h3>
           </Link>
           <SearchBar />
           <LoginBar />

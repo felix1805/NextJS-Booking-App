@@ -27,6 +27,13 @@ header {
   z-index: 3;
 }
 
+.home-page {
+  text-decoration: none;
+  margin: 20px;
+  font-size: 25px;
+  color:black;
+}
+
 .primary {
   background-color: rgb(2, 86, 254);
   border: none;
