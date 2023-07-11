@@ -3,7 +3,7 @@ import { media } from "@wix/api-client";
 const Card = ({ service }) => {
 
   const image = media.getImageUrl(service.media.mainMedia.image)
-  
+
   return (
     <article className="card">
       <div className="info-container">

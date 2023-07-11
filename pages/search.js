@@ -1,18 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import Link from "next/link";
-import { createClient, OAuthStrategy } from "@wix/api-client";
-import { services } from "@wix/bookings";
-import Cookies from "js-cookie";
 import Card from "../components/Card";
-import { searchContext } from "./_app";
+import { searchContext } from "../pages/_app";
+import Map from "../components/Map";
+import { myWixClient } from "../helpers";
 
-const myWixClient = createClient({
-  modules: { services },
-  auth: OAuthStrategy({
-    clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-    tokens: JSON.parse(Cookies.get('session') || null),
-  })
-})
 
 const Search = () => {
   const [serviceList, setServiceList] = useState([])
@@ -34,6 +26,8 @@ const Search = () => {
 
   console.log(serviceList)
 
+  let coords = serviceList.map((serviceItem) => serviceItem.locations[0].business.address.location)
+
   return (
     <div className="search-container">
       <div className="results-container">
@@ -48,6 +42,7 @@ const Search = () => {
           )}
         </ul>
       </div>
+      <Map coords={coords} />
     </div>
   )
 }

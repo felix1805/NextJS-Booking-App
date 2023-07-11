@@ -15,8 +15,8 @@ const App = ({ Component, pageProps }) => {
           <Link href='/'>
             <h3>ClassPass</h3>
           </Link>
-          <SearchBar/>
-          <LoginBar/>
+          <SearchBar />
+          <LoginBar />
         </header>
         <Component {...pageProps} />
       </searchContext.Provider>

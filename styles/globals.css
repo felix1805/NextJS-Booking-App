@@ -12,6 +12,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   max-width: 100vw;
+  overflow-y: hidden;
 }
 
 header {
@@ -26,22 +27,26 @@ header {
   z-index: 3;
 }
 
-button.primary {
+.primary {
   background-color: rgb(2, 86, 254);
   border: none;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 15px;
+  margin: 5px;
+  text-decoration: none;
 }
 
-button.secondary {
+.secondary {
   border: 1px solid rgb(2, 86, 254);
   background-color: rgb(255, 255, 255);
   color: rgb(2, 86, 254);
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 15px;
+  margin: 5px;
+  text-decoration: none;
 }
 
 .main {
@@ -173,6 +178,8 @@ button.secondary {
   margin-top: 80px;
   display: flex;
   justify-content: center;
+  height: 100vh;
+  overflow: scroll !important;
 }
 
 .service-container .info-container {
@@ -186,13 +193,24 @@ button.secondary {
 }
 
 .service-container .schedule-card-button {
-display: flex;
-justify-content: space-between;
-width: 100%;
-border: none;
-cursor: pointer;
-border-bottom: solid 1px rgb(255, 255, 255);
-border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+.service-container .main-img-container {
+  width: 700px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.service-container .main-img-container img {
+  height: 150%;
 }
 
 /* Nav */
@@ -219,4 +237,43 @@ nav button.login:hover {
   display: flex;
   align-items: center;
   margin: 0 10px;
+}
+
+/* Mini Map */
+
+.mini-map-container {
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mini-map-container div {
+  width: 100%;
+  height: 100%;
+}
+
+.mapboxgl-compact {
+  display: none;
+}
+
+/* Map */
+
+.map-container {
+  height: 100vh;
+  width: 50vw;
+}
+
+.map-container div {
+  width: 100%;
+  height: 100%;
+}
+
+.search-container {
+  display: flex;
+}
+
+.results-container {
+  width: 50vw;
+  overflow: scroll !important;
 }

@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
-import { redirects } from "@wix/redirects";
-import { availabilityCalendar, services } from "@wix/bookings";
-import { createClient, OAuthStrategy } from "@wix/api-client";
 import Cookies from "js-cookie";
+import { myWixClient } from "../../helpers";
 
-const myWixClient = createClient({
-  auth: OAuthStrategy({
-    clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-    tokens: JSON.parse(Cookies.get('session') || null),
-  })
-})
 
 const loginCallback = () => {
   const [nextPage, setNextPage] = useState(null)

@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
-import { createClient, OAuthStrategy } from "@wix/api-client";
-import { members } from "@wix/members";
 import Cookies from "js-cookie";
-
-const myWixClient = createClient({
-  modules: { members },
-  auth: OAuthStrategy({
-    clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-    tokens: JSON.parse(Cookies.get('session') || null),
-  })
-})
+import { myWixClient } from "../helpers";
 
 const LoginBar = () => {
   const [user, setUser] = useState('visitor')

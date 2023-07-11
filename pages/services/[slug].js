@@ -1,18 +1,10 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { createClient, OAuthStrategy } from "@wix/api-client";
-import { availabilityCalendar, services } from "@wix/bookings";
-import { redirects } from "@wix/redirects";
-import Cookies from "js-cookie";
-import ScheduleCard from "@/components/ScheduleCard";
+import ScheduleCard from "../../components/ScheduleCard";
+import MiniMap from "../../components/MiniMap";
+import MainImage from "../../components/MainImage";
+import { myWixClient } from "../../helpers";
 
-const myWixClient = createClient({
-  modules: { services, availabilityCalendar, redirects },
-  auth: OAuthStrategy({
-    clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-    tokens: JSON.parse(Cookies.get('session') || null),
-  })
-})
 
 const ServicePage = () => {
   const [service, setService] = useState(null)
@@ -57,24 +49,27 @@ const ServicePage = () => {
       {service &&
         <article className="service-container">
           <div className="info-container">
-            {/* {Image Placeholder} */}
+            <MainImage service={service} />
             <h2>{service.name}</h2>
             <p>{service.tagLine}</p>
             <p>{service.description}</p>
             <hr />
             <h3>Schedule</h3>
             {availabilityEntries.map((availabilityEntry) =>
-            <ScheduleCard
-              key={Object.keys(availabilityEntry)}
-              availabilityEntry={availabilityEntry}
-            />
-          )}
+              <ScheduleCard
+                key={Object.keys(availabilityEntry)}
+                availabilityEntry={availabilityEntry}
+              />
+            )}
           </div>
           <div className="address-container">
-           {/* {MiniMap} */}
-           <p>➡️{service.locations[0].business.address.formatted}</p>
-           <p>➡️{service.locations[0].business.address.city}</p>
-           <p>➡️{service.locations[0].business.address.country}</p>
+            <MiniMap
+              lng={service.locations[0].business.address.location.longitude}
+              lat={service.locations[0].business.address.location.latitude}
+            />
+            <p>➡️{service.locations[0].business.address.formatted}</p>
+            <p>➡️{service.locations[0].business.address.city}</p>
+            <p>➡️{service.locations[0].business.address.country}</p>
           </div>
         </article>
       }
